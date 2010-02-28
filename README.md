@@ -1,10 +1,10 @@
-# jQuery Embed Data
+# jQuery Embed Data 0.1
 In a nutshell:
 
     <div id="my-div">
         <script type="text/javascript" class="metadata">
         {some: "metadata"}
-        </scrip>t
+        </scrip>
     </div>
     <script type="text/javascript" class="metadata">
         $(document).ready(function(){
@@ -18,8 +18,8 @@ A jQuery plugin that stores JSON data within HTML elements.
 
 ## What is this for ?
 
-> To save/retrieve JSON data from server.
-> If you need to get JSON data from server without making AJAX requests.
+To save/retrieve JSON data from server.
+If you need to get JSON data from server without making AJAX requests.
 
 # Licensing
 
