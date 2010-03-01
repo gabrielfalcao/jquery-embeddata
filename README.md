@@ -1,17 +1,26 @@
-# jQuery Embed Data 0.1
+# jQuery Embed Data
 In a nutshell:
 
     <div id="my-div">
-        <script type="text/javascript" class="metadata">
+        <script type="jquery/data" class="metadata">
         {"some":"metadata"}
         </scrip>
     </div>
     <script type="text/javascript" class="metadata">
         $(document).ready(function(){
+
+            // getting data:
             $("#my-div").edata("get").some == "metadata";
-            $("#my-div").edata("set", "some", "new data");
-            /*  now $("#my-div").edata("raw") == {"some":"new data"};
-                and $("#my-div").edata("get", "some") == "new data";  */
+
+            // setting/updating data:
+            $("#my-div").edata("set", "other", "new data");
+
+            // getting raw json (even updated)
+            $("#my-div").edata("raw") == '{"some":"metadata","other":"new data"}';
+
+            // counting
+            $("#my-div").edata("total") == 1;
+
         });
     </script>
 
@@ -23,6 +32,14 @@ A jQuery plugin that stores JSON data within HTML elements.
 
 To save/retrieve JSON data from server.
 If you need to get JSON data from server without making AJAX requests.
+
+## Why ?
+
+Because I needed something:
+
++ simple -> It is just as jQuery-ish as I like
++ robust -> A jQuery plugin which is unit-tested
++ compliant -> I just do not like to get a messy HTML. No unexistent attributes in my elements.
 
 # Licensing
 

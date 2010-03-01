@@ -255,7 +255,7 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
                  }
              },
              edata: function (action){
-                 this.holder = this.find("script.metadata");
+                 this.holder = this.find("script[type='jquery/data']");
                  return this.actions[action](this, arguments);
              }
          }
