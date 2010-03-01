@@ -3,12 +3,15 @@ In a nutshell:
 
     <div id="my-div">
         <script type="text/javascript" class="metadata">
-        {some: "metadata"}
+        {"some":"metadata"}
         </scrip>
     </div>
     <script type="text/javascript" class="metadata">
         $(document).ready(function(){
             $("#my-div").edata("get").some == "metadata";
+            $("#my-div").edata("set", "some", "new data");
+            /*  now $("#my-div").edata("raw") == {"some":"new data"};
+                and $("#my-div").edata("get", "some") == "new data";  */
         });
     </script>
 
