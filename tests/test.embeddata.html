@@ -1,12 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
-	<title>Enquete Carnaval 2010 tests</title>
-	<script type="text/javascript" src="./qunit.js"></script>
-	<script type="text/javascript" src="../jquery-1.4.2.min.js"></script>
+	<title>jQuery Embed Data test suite</title>
+	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="qunit.js"></script>
+	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="../jquery.embeddata.js"></script>
-	<script type="text/javascript" src="./test.embeddata.js"></script>
-	<link rel="stylesheet" href="./qunit.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="test.embeddata.js"></script>
     </head>
     <body>
 	<div id="fixtures">
@@ -17,12 +17,22 @@
 	    </div>
 	    <div id="test2">
 		<script type="text/javascript" class="metadata">
-		    {some_key: "some_value"}
+		    {
+		        key1: "some_value",
+		        key2: "some_value",
+		        key3: "some_value",
+		        key4: "some_value",
+		        key5: "some_value"
+		    }
 		</script>
 	    </div>
-
+	    <div id="test3">
+		<script type="text/javascript" class="metadata">
+		    {will_be_updated: "previous value"}
+		</script>
+	    </div>
 	</div>
-	<h1 id="qunit-header">QUnit example</h1>
+	<h1 id="qunit-header">jQuery Embed Data test suite</h1>
 	<h2 id="qunit-banner"></h2>
 	<h2 id="qunit-userAgent"></h2>
 	<ol id="qunit-tests">
