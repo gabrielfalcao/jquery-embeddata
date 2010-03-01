@@ -1,4 +1,6 @@
 # jQuery Embed Data
+> Version 0.1
+
 In a nutshell:
 
     <div id="my-div">
