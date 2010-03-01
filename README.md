@@ -4,11 +4,11 @@
 In a nutshell:
 
     <div id="my-div">
-        <script type="jquery/data" class="metadata">
+        <script type="jquery/data">
         {"some":"metadata"}
         </scrip>
     </div>
-    <script type="text/javascript" class="metadata">
+    <script type="text/javascript">
         $(document).ready(function(){
 
             // getting data:
