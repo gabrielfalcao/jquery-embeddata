@@ -1,0 +1,5 @@
+2010-03-05  Gabriel Falcão G. de Moura  <gabriel@nacaolivre.org>
+
+	* Releasing version 0.2:
+	  * Now the method "set" can set a whole JSON withing element's embed data, overwritting it.
+
