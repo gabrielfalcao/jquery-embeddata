@@ -9,6 +9,11 @@
 	<script type="text/javascript" src="test.embeddata.js"></script>
     </head>
     <body>
+	<h1 id="qunit-header">jQuery Embed Data test suite</h1>
+	<h2 id="qunit-banner"></h2>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests">
+	</ol>
 	<div id="fixtures">
 	    <div id="test1">
 		<script type="jquery/data">
@@ -31,11 +36,12 @@
 		    {will_be_updated: "previous value"}
 		</script>
 	    </div>
+	    <div id="test-empty">
+	    </div>
+	    <div id="test-with-script">
+		<script type="jquery/data"></script>
+	    </div>
+
 	</div>
-	<h1 id="qunit-header">jQuery Embed Data test suite</h1>
-	<h2 id="qunit-banner"></h2>
-	<h2 id="qunit-userAgent"></h2>
-	<ol id="qunit-tests">
-	</ol>
     </body>
 </html>

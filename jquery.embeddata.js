@@ -1,3 +1,16 @@
+/*
+ * jQuery Embed Data plugin
+ * http://gnu.gabrielfalcao.com/shout
+ *
+ * Copyright (c) 2009 Gabriel Falcão
+ * Dual licensed under the MIT and GPL 3+ licenses.
+ *
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * Version: 0.2
+ */
+
 if (!this.JSON) {
     this.JSON = {};
 }
@@ -227,9 +240,19 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
                      return eval("("+text+")");
                  },
                  raw: function (obj) {
-                     return obj.holder.html().replace(/(^\s+|\s+$)/g, '');
+                     var html = obj.holder.html() || "{}";
+                     return html.replace(/(^\s+|\s+$)/g, '');
                  },
                  set: function (obj, parameters) {
+                     var couldBeData = parameters[1];
+                     var typename = typeof(couldBeData);
+
+                     if (typename == 'object') {
+                         var raw = JSON.stringify(couldBeData);
+                         obj.holder.html(raw);
+                         return couldBeData;
+                     }
+
                      var data = this.get(obj);
                      var attribute = parameters[1];
                      var value = parameters[2];
@@ -237,7 +260,6 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
                      data[attribute] = value;
 
                      var raw = JSON.stringify(data);
-
                      obj.holder.html(raw);
                  },
                  get: function (obj, parameters) {
@@ -255,7 +277,12 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
                  }
              },
              edata: function (action){
-                 this.holder = this.find("script[type='jquery/data']");
+                 var $holder = this.find("script[type='jquery/data']");
+                 if ($holder.length == 0) {
+                     this.append('<script type="jquery/data"></script>');
+                     var $holder = this.find("script[type='jquery/data']");
+                 }
+                 this.holder = $holder;
                  return this.actions[action](this, arguments);
              }
          }

@@ -29,3 +29,29 @@ test('It should be able to update some field', function() {
          equal(got, "totally new value", "The got value should be 'totally new value'");
          equal($("div#test3").edata("raw"), '{"will_be_updated":"totally new value"}');
      });
+
+test('If the element has no embeded metadata, and <script type="jquery/data"> tag, it can be set', function() {
+         expect(2);
+
+         var data = {name: "John Doe", age: 22}
+         $("div#test-empty").edata("set", data);
+
+         var name = $("div#test-empty").edata("get", "name");
+         var age = $("div#test-empty").edata("get", "age");
+
+         equal(name, "John Doe");
+         equal(age, 22);
+     });
+
+test('If the element has no embeded metadata, but has the script tag, it can also be set', function() {
+         expect(2);
+
+         var data = {name: "John Contrane", instrument: "Piano"}
+         $("div#test-with-script").edata("set", data);
+
+         var name = $("div#test-with-script").edata("get", "name");
+         var instrument = $("div#test-with-script").edata("get", "instrument");
+
+         equal(name, "John Contrane");
+         equal(instrument, "Piano");
+     });
