@@ -241,7 +241,7 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
                  },
                  raw: function (obj) {
                      var html = obj.holder.html() || "{}";
-                     return html.replace(/(^\s+|\s+$)/g, '');
+                     return jQuery.trim(html);
                  },
                  set: function (obj, parameters) {
                      var couldBeData = parameters[1];
